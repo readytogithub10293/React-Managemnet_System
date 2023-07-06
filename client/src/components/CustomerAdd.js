@@ -40,7 +40,7 @@ class CustomerAdd extends React.Component {
 
 
 
-  handleFormSubmit(e) {
+ handleFormSubmit(e) {
 
     e.preventDefault()
 
@@ -51,6 +51,23 @@ class CustomerAdd extends React.Component {
       console.log(response.data);
 
     })
+
+    this.setState({
+
+      file: null,
+
+      userName: '',
+
+      birthday: '',
+
+      gender: '',
+
+      job: '',
+
+      fileName: ''
+    })
+
+    window.location.reload();
 
   }
 
@@ -107,7 +124,6 @@ class CustomerAdd extends React.Component {
       }
 
     }
-
     return axios.post(url, formData, config)
 
   }
